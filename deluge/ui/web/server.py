@@ -686,7 +686,7 @@ class DelugeWeb(component.Component):
 
         if self.base != '/':
             # Strip away slashes and serve on the base path as well as root path
-            self.top_level.putChild(self.base.strip('/'), self.top_level)
+            self.top_level.putChild(bytes(self.base.strip('/'), encoding='utf8'), self.top_level)
 
         setup_translation()
 
